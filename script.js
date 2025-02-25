@@ -1,6 +1,10 @@
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+
+let currentQuestion = 0;
 
 const quizQuestions = [
     {
@@ -112,12 +116,38 @@ function buildQuiz() {
         }
 
         output.push(
-            `<div class="question"> ${currentQuestion.question} </div>
-            <div class="answers"> ${answers.join('')} </div>`
+            `<div class="question" id="question${questionNumber}">
+                <div class="question-text">${currentQuestion.question}</div>
+                <div class="answers">${answers.join('')}</div>
+            </div>`
         );
     });
 
     quizContainer.innerHTML = output.join('');
+    showQuestion(currentQuestion);
+}
+
+function showQuestion(n) {
+    const questions = quizContainer.getElementsByClassName('question');
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].style.display = 'none';
+    }
+    questions[n].style.display = 'block';
+
+    // Управление видимостью кнопок "Назад" и "Вперед"
+    if (n === 0) {
+        prevButton.style.display = 'none';
+    } else {
+        prevButton.style.display = 'inline-block';
+    }
+
+    if (n === questions.length - 1) {
+        nextButton.style.display = 'none';
+        submitButton.style.display = 'inline-block';
+    } else {
+        nextButton.style.display = 'inline-block';
+        submitButton.style.display = 'none';
+    }
 }
 
 function showResults() {
@@ -141,5 +171,15 @@ function showResults() {
 }
 
 buildQuiz();
+
+prevButton.addEventListener('click', () => {
+    currentQuestion--;
+    showQuestion(currentQuestion);
+});
+
+nextButton.addEventListener('click', () => {
+    currentQuestion++;
+    showQuestion(currentQuestion);
+});
 
 submitButton.addEventListener('click', showResults);
