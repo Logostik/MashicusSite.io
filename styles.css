@@ -1,15 +1,19 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    background-image: url('coffee.jpg'); /* Путь к вашей картинке */
+    background-size: cover; /* Растягиваем картинку на весь экран */
+    background-position: center; /* Центрируем картинку */
+    background-repeat: no-repeat; /* Запрещаем повторение картинки */
 }
 
 .quiz-container {
-    background: white;
+    background: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
