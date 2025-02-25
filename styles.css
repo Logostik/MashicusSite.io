@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('background.jpg'); /* Путь к вашей картинке */
+    background-image: url('img/coffee.jpg'); /* Путь к картинке */
     background-size: cover; /* Растягиваем картинку на весь экран */
     background-position: center; /* Центрируем картинку */
     background-repeat: no-repeat; /* Запрещаем повторение картинки */
