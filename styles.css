@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('coffee.jpg'); /* Путь к вашей картинке */
+    background-image: url('background.jpg'); /* Путь к вашей картинке */
     background-size: cover; /* Растягиваем картинку на весь экран */
     background-position: center; /* Центрируем картинку */
     background-repeat: no-repeat; /* Запрещаем повторение картинки */
@@ -19,11 +19,27 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
+    max-height: 80vh; /* Ограничиваем высоту контейнера */
+    overflow-y: auto; /* Добавляем вертикальную прокрутку */
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.answers {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 button {
     padding: 10px 20px;
-    margin-top: 20px;
     border: none;
     background-color: #28a745;
     color: white;
