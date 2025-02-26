@@ -131,7 +131,7 @@ function showQuestion(n) {
     const questions = quizContainer.getElementsByClassName('question');
 
     // Скрываем все вопросы
-    for (let i = 0; i < questions.length; i++) {
+    for (let i = 0; i < questions.length; ++i) {
         questions[i].style.display = 'none';
     }
 
