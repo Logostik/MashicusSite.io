@@ -9,13 +9,15 @@
 <body>
     <div class="quiz-container">
         <h1>Тестовый квиз</h1>
-        <div id="quiz"></div>
+        <div id="quiz">
+            <!-- Вопросы будут добавлены сюда динамически через JavaScript -->
+        </div>
         <div class="navigation">
-            <button id="prev">Назад</button>
+            <button id="prev" disabled>Назад</button> <!-- Кнопка "Назад" отключена на первом вопросе -->
             <button id="next">Вперед</button>
         </div>
-        <button id="submit">Завершить квиз</button>
-        <div id="results"></div>
+        <button id="submit" style="display: none;">Завершить квиз</button> <!-- Кнопка "Завершить" скрыта до последнего вопроса -->
+        <div id="results"></div> <!-- Здесь будут отображаться результаты -->
     </div>
     <script src="script.js"></script>
 </body>
