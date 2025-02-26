@@ -131,11 +131,10 @@ function showQuestion(n) {
     const questions = quizContainer.getElementsByClassName('question');
 
     // Скрываем все вопросы
-    for (let i = 0; i < questions.length; ++i) {
-        if(n != i){
-            questions[i].style.display = 'none';
-        }
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].style.display = 'none';
     }
+
     // Показываем текущий вопрос
     questions[n].style.display = 'block';
 
