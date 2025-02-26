@@ -7,24 +7,25 @@ body {
     justify-content: center;
     align-items: center;
     background-image: url('img/coffee.jpg'); /* Путь к картинке */
-    background-size: cover; /* Растягиваем картинку на весь экран */
-    background-position: center; /* Центрируем картинку */
-    background-repeat: no-repeat; /* Запрещаем повторение картинки */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .quiz-container {
-    background: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
-    max-height: 80vh; /* Ограничиваем высоту контейнера */
-    overflow-y: auto; /* Добавляем вертикальную прокрутку */
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .question {
     margin-bottom: 20px;
+    display: none; /* По умолчанию все вопросы скрыты */
 }
 
 .answers {
