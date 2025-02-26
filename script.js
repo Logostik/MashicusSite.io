@@ -8,7 +8,7 @@ let currentQuestion = 0;
 
 const quizQuestions = [
     {
-        question: "Какой язык программирования используется для создания веб-страниц?",
+       question: "Какой язык программирования используется для создания веб-страниц?",
         answers: {
             a: "Java",
             b: "Python",
@@ -25,7 +25,78 @@ const quizQuestions = [
         },
         correctAnswer: "b"
     },
-    // Добавьте остальные вопросы здесь
+    {
+        question: "Какой метод используется для вывода данных в консоль в JavaScript?",
+        answers: {
+            a: "console.log()",
+            b: "print()",
+            c: "alert()"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "Какой символ используется для однострочного комментария в JavaScript?",
+        answers: {
+            a: "//",
+            b: "/*",
+            c: "#"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "Какой элемент HTML используется для создания ссылки?",
+        answers: {
+            a: "<a>",
+            b: "<link>",
+            c: "<href>"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "Какой метод используется для добавления элемента в конец массива в JavaScript?",
+        answers: {
+            a: "push()",
+            b: "pop()",
+            c: "shift()"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "Какой тег используется для создания таблицы в HTML?",
+        answers: {
+            a: "<table>",
+            b: "<tr>",
+            c: "<td>"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "Какой оператор используется для сравнения по значению и типу в JavaScript?",
+        answers: {
+            a: "==",
+            b: "===",
+            c: "="
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Какой метод используется для преобразования строки в число в JavaScript?",
+        answers: {
+            a: "parseInt()",
+            b: "toString()",
+            c: "toNumber()"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "Какой тег используется для создания списка в HTML?",
+        answers: {
+            a: "<ul>",
+            b: "<ol>",
+            c: "<li>"
+        },
+        correctAnswer: "a"
+    }
 ];
 
 function buildQuiz() {
