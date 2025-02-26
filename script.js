@@ -1,8 +1,8 @@
 const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
+const submitButton = document.getElementById('submit');
+const resultsContainer = document.getElementById('results');
 
 let currentQuestion = 0;
 
@@ -25,78 +25,7 @@ const quizQuestions = [
         },
         correctAnswer: "b"
     },
-    {
-        question: "Какой метод используется для вывода данных в консоль в JavaScript?",
-        answers: {
-            a: "console.log()",
-            b: "print()",
-            c: "alert()"
-        },
-        correctAnswer: "a"
-    },
-    {
-        question: "Какой символ используется для однострочного комментария в JavaScript?",
-        answers: {
-            a: "//",
-            b: "/*",
-            c: "#"
-        },
-        correctAnswer: "a"
-    },
-    {
-        question: "Какой элемент HTML используется для создания ссылки?",
-        answers: {
-            a: "<a>",
-            b: "<link>",
-            c: "<href>"
-        },
-        correctAnswer: "a"
-    },
-    {
-        question: "Какой метод используется для добавления элемента в конец массива в JavaScript?",
-        answers: {
-            a: "push()",
-            b: "pop()",
-            c: "shift()"
-        },
-        correctAnswer: "a"
-    },
-    {
-        question: "Какой тег используется для создания таблицы в HTML?",
-        answers: {
-            a: "<table>",
-            b: "<tr>",
-            c: "<td>"
-        },
-        correctAnswer: "a"
-    },
-    {
-        question: "Какой оператор используется для сравнения по значению и типу в JavaScript?",
-        answers: {
-            a: "==",
-            b: "===",
-            c: "="
-        },
-        correctAnswer: "b"
-    },
-    {
-        question: "Какой метод используется для преобразования строки в число в JavaScript?",
-        answers: {
-            a: "parseInt()",
-            b: "toString()",
-            c: "toNumber()"
-        },
-        correctAnswer: "a"
-    },
-    {
-        question: "Какой тег используется для создания списка в HTML?",
-        answers: {
-            a: "<ul>",
-            b: "<ol>",
-            c: "<li>"
-        },
-        correctAnswer: "a"
-    }
+    // Добавьте остальные вопросы здесь
 ];
 
 function buildQuiz() {
@@ -128,63 +57,30 @@ function buildQuiz() {
 }
 
 function showQuestion(n) {
-    // Получаем все элементы с классом "question"
     const questions = quizContainer.getElementsByClassName('question');
 
-    // Проверяем, что вопросы существуют
-    if (!questions || questions.length === 0) {
-        console.error("Вопросы не найдены!");
-        return;
-    }
-
     // Скрываем все вопросы
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].style.display = 'none';
+    }
 
     // Показываем текущий вопрос
-    if (questions[n]) {
-        questions[n].style.display = 'block';
-    } else {
-        console.error(`Вопрос с индексом ${n} не найден!`);
-        return;
-    }
+    questions[n].style.display = 'block';
 
-    // Управление видимостью кнопок "Назад" и "Вперед"
+    // Управление кнопками
     if (n === 0) {
-        // Если это первый вопрос, скрываем кнопку "Назад"
-        prevButton.style.display = 'none';
+        prevButton.disabled = true; // Отключаем кнопку "Назад" на первом вопросе
     } else {
-        // Иначе показываем кнопку "Назад"
-        prevButton.style.display = 'inline-block';
+        prevButton.disabled = false; // Включаем кнопку "Назад" на остальных вопросах
     }
 
     if (n === questions.length - 1) {
-        // Если это последний вопрос, скрываем кнопку "Вперед" и показываем "Завершить квиз"
-        nextButton.style.display = 'none';
-        submitButton.style.display = 'inline-block';
+        nextButton.style.display = 'none'; // Скрываем кнопку "Вперед" на последнем вопросе
+        submitButton.style.display = 'inline-block'; // Показываем кнопку "Завершить квиз"
     } else {
-        // Иначе показываем кнопку "Вперед" и скрываем "Завершить квиз"
-        nextButton.style.display = 'inline-block';
-        submitButton.style.display = 'none';
+        nextButton.style.display = 'inline-block'; // Показываем кнопку "Вперед"
+        submitButton.style.display = 'none'; // Скрываем кнопку "Завершить квиз"
     }
-}
-
-function showResults() {
-    const answerContainers = quizContainer.querySelectorAll('.answers');
-    let numCorrect = 0;
-
-    quizQuestions.forEach((currentQuestion, questionNumber) => {
-        const answerContainer = answerContainers[questionNumber];
-        const selector = `input[name=question${questionNumber}]:checked`;
-        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-        if (userAnswer === currentQuestion.correctAnswer) {
-            numCorrect++;
-            answerContainers[questionNumber].style.color = 'green';
-        } else {
-            answerContainers[questionNumber].style.color = 'red';
-        }
-    });
-
-    resultsContainer.innerHTML = `${numCorrect} из ${quizQuestions.length}`;
 }
 
 buildQuiz();
