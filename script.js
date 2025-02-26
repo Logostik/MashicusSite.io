@@ -129,9 +129,13 @@ function buildQuiz() {
 
 function showQuestion(n) {
     const questions = quizContainer.getElementsByClassName('question');
+
+    // Скрываем все вопросы
     for (let i = 0; i < questions.length; i++) {
         questions[i].style.display = 'none';
     }
+
+    // Показываем текущий вопрос
     questions[n].style.display = 'block';
 
     // Управление видимостью кнопок "Назад" и "Вперед"
@@ -173,13 +177,17 @@ function showResults() {
 buildQuiz();
 
 prevButton.addEventListener('click', () => {
-    currentQuestion--;
-    showQuestion(currentQuestion);
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        showQuestion(currentQuestion);
+    }
 });
 
 nextButton.addEventListener('click', () => {
-    currentQuestion++;
-    showQuestion(currentQuestion);
+    if (currentQuestion < quizQuestions.length - 1) {
+        currentQuestion++;
+        showQuestion(currentQuestion);
+    }
 });
 
 submitButton.addEventListener('click', showResults);
