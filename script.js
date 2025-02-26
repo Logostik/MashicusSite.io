@@ -96,7 +96,7 @@ const quizQuestions = [
             c: "<li>"
         },
         correctAnswer: "a"
-    }
+    },
 ];
 
 function buildQuiz() {
