@@ -8,61 +8,19 @@
 </head>
 <body>
     <div class="quiz-container">
-        <h1>Tecrowd news</h1>
+        <h1>Тестовый квиз</h1>
         <div id="quiz">
-            <!-- Вопрос 0 -->
-            <div class="question" id="question0" style="display: none;">
-                <div class="question-text">Какой язык программирования используется для создания веб-страниц?</</div>
-                <div class="answers">...</div>
-            </div>
-
-            <!-- Вопрос 1 -->
-            <div class="question" id="question1" style="display: none;">
-                <div class="question-text">Какой тег используется для создания заголовка в HTML?</div>
-                <div class="answers">...</div>
-            </div>
-
-            <!-- Вопрос 2 -->
-            <div class="question" id="question2" style="display: none;">
-                <div class="question-text">Какой метод используется для вывода данных в консоль в JavaScript?</div>
-                <div class="answers">...</div>
-            </div>
-
-            <!-- Вопрос 3 -->
-            <div class="question" id="question3" style="display: none;">
-                <div class="question-text">...</div>
-                <div class="answers">...</div>
-            </div>
-
-            <!-- Вопрос 4 -->
-            <div class="question" id="question4" style="display: none;">
-                <div class="question-text">...</div>
-                <div class="answers">...</div>
-            </div>
-
-            <!-- Вопрос 5 (исправлена опечатка в id) -->
-            <div class="question" id="question5" style="display: none;">
-                <div class="question-text">Какой метод используется для добавления элемента в конец массива в JavaScript?</div>
-                <div class="answers">...</div>
-            </div>
-
-            <!-- Вопрос 6 -->
-            <div class="question" id="question6" style="display: none;">
-                <div class="question-text">Какой тег используется для создания таблицы в HTML?</div>
-                <div class="answers">...</div>
-            </div>
+            <!-- Вопросы будут добавлены сюда динамически через JavaScript -->
         </div>
-
         <div class="navigation">
             <button id="prev">Назад</button>
+            <button id="prev" disabled>Назад</button> <!-- Кнопка "Назад" отключена на первом вопросе -->
             <button id="next">Вперед</button>
         </div>
-
-        <!-- Исправлена кнопка "Завершить квиз" -->
-        <button id="submit" style="display: inline-block;">Завершить квиз</button>
-        <div id="results">0 из 10</div>
+        <button id="submit">Завершить квиз</button>
+        <div id="results"></div>
+        <button id="submit" style="display: none;">Завершить квиз</button> <!-- Кнопка "Завершить" скрыта до последнего вопроса -->
+        <div id="results"></div> <!-- Здесь будут отображаться результаты -->
     </div>
-
     <script src="script.js"></script>
 </body>
-</html>
